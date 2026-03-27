@@ -1,3 +1,5 @@
+// Count the number of digits in a number.
+
 import java.util.Scanner;
 public class Count_digits {
 
