@@ -23,6 +23,30 @@ public class Sorting {
         }
     }
 
+//    Insertion sort
+    public static void insertionSort(int array[]){
+        int i,j, length= array.length;
+
+        System.out.println("\n Insertion sorting");
+
+        for( i = 1; i < length; i++){
+            int current = array[i];
+            j = i-1;
+            while (j >=0 && current < array[j]){
+                array[j+1] = array[j];
+
+                j--;
+            }
+            array[j+1] = current;
+
+        }
+
+        for(i = 0; i<length; i++){
+            System.out.printf("%d,",array[i]);
+        }
+
+    }
+
 
 //    Selection sort
 
@@ -67,9 +91,11 @@ for (i=0; i<length;i++) {
         }
 
 
-//        bubbleSort(array);
+        bubbleSort(array);
 
         selectionSort(array);
+
+        insertionSort(array);
 
     }
 }
