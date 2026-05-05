@@ -35,6 +35,21 @@ public class CheckArrayElement {
 
     }
 
+//    Count even numbers in array
+    public static void evenNumberCount(int []numbers, int n){
+        int i, count=0;
+
+        for(i=0; i<n; i++){
+            if(numbers[i] % 2 == 0){
+
+                count++;
+
+            }
+        }
+
+        System.out.printf("\nThe number of even number is: %d",count);
+    }
+
    public static void main(String[] args) {
 
        Scanner sc = new Scanner(System.in);
@@ -59,6 +74,10 @@ public class CheckArrayElement {
 
 //       small number function call
        smallestNumber(numbers,n);
+
+
+//       calling the function which can count the even number.
+       evenNumberCount(numbers, n);
 
     }
 }
