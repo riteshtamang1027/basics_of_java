@@ -50,6 +50,20 @@ public class CheckArrayElement {
         System.out.printf("\nThe number of even number is: %d",count);
     }
 
+//    Count odd numbers in array.
+
+    public static void oddNumber(int []number, int n){
+        int i, count =0;
+
+        for(i=0; i<n; i++){
+            if(number[i] % 2 !=0){
+                count ++;
+            }
+        }
+        System.out.printf("\nThe number of odd number is: %d",count);
+
+    }
+
    public static void main(String[] args) {
 
        Scanner sc = new Scanner(System.in);
@@ -78,6 +92,10 @@ public class CheckArrayElement {
 
 //       calling the function which can count the even number.
        evenNumberCount(numbers, n);
+
+
+//       count odd number function calling
+       oddNumber(numbers,n);
 
     }
 }
