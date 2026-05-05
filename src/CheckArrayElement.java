@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class CheckArrayElement {
 
+//    find largest number function
     public static void largestNumber(int []numbers,int n)
     {
         int i;
@@ -15,6 +16,22 @@ public class CheckArrayElement {
         }
 
         System.out.printf("\n%d is the largest number among the given numbers.",largest);
+
+    }
+
+//    find smallest number function
+    public static void smallestNumber(int []numbers, int n){
+
+        int i;
+        int smallest = numbers[0];
+
+        for (i=1;i<n;i++){
+            if(numbers[i] < smallest){
+                smallest = numbers[i];
+            }
+        }
+        System.out.printf("\n%d is the smallest number among the given numbers.",smallest);
+
 
     }
 
@@ -37,7 +54,11 @@ public class CheckArrayElement {
        }
 
 
+//       largest number function call
        largestNumber(numbers,n);
+
+//       small number function call
+       smallestNumber(numbers,n);
 
     }
 }
