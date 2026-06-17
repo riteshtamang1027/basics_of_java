@@ -1,101 +1,102 @@
+
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class Sorting {
 
+    //    Bubble Sort function
+    public static void bobbleSorting(int[] numbers ){
 
-//    bubble sort
-    public static void bubbleSort(int array[]){
-        int length = array.length,i;
+        for (int i = 0; i < numbers.length - 1; i++){
 
-        System.out.println("\nBobble sorting array elements:");
-
-        for( i=0; i<length-1; i++){
-            for(int j=0; j< length-i-1; j++){
-                if(array[j] > array[j+1]){
-                    int temp = array[j];
-                    array[j]= array[j+1];
-                    array[j+1]= temp;
+            for (int j = 0; j < numbers.length - 1 - i; j++){
+                if(numbers[j] > numbers[j + 1]){
+                    int temp = numbers[j];
+                    numbers[j] = numbers[j + 1];
+                    numbers[j + 1] = temp;
                 }
+
             }
-        }
-
-
-        for ( i=0; i<length;i++){
-            System.out.printf("%d,",array[i]);
-        }
-    }
-
-//    Insertion sort
-    public static void insertionSort(int array[]){
-        int i,j, length= array.length;
-
-        System.out.println("\n Insertion sorting");
-
-        for( i = 1; i < length; i++){
-            int current = array[i];
-            j = i-1;
-            while (j >=0 && current < array[j]){
-                array[j+1] = array[j];
-
-                j--;
-            }
-            array[j+1] = current;
 
         }
-
-        for(i = 0; i<length; i++){
-            System.out.printf("%d,",array[i]);
-        }
+        System.out.println("Bobble Sort: "+ Arrays.toString(numbers));
 
     }
 
+    //    This is Selection sort
+    public static void selectionSort(int[] numbers){
 
-//    Selection sort
+        for (int i = 0; i < numbers.length - 1; i++){
+            int minimumIndex = i;
 
-    public static void selectionSort(int arr[]){
+            for (int j = i + 1; j < numbers.length; j++){
 
-        int i,j, length=arr.length;
-
-        System.out.println("\nSelective sorting array element");
-
-        for(i=0; i< length; i++){
-            int smallest = i;
-
-            for (j=i+1; j < length; j++){
-                if(arr[smallest] > arr[j]){
-                    smallest = j;
-
+                if(numbers[j] < numbers[minimumIndex]){
+                    minimumIndex = j;
                 }
+
             }
 
-            int temp = arr[smallest];
-            arr[smallest] = arr[i];
-            arr[i] = temp;
-
+            int temp = numbers[minimumIndex];
+            numbers[minimumIndex] = numbers[i];
+            numbers[i] = temp;
         }
-for (i=0; i<length;i++) {
-    System.out.printf("%d,", arr[i]);
-}
+
+        System.out.println("Selection Sort: " + Arrays.toString(numbers) );
+
     }
 
+    //    This is an Insertion sort.
+    public static void insertionSort(int[] numbers){
+
+        for (int i = 1; i < numbers.length; i++){
+
+            int j = i - 1;
+
+            while (i > 0 && numbers[j] > numbers[i]){
+                int temp = numbers[i];
+                numbers[i] = numbers[j];
+                numbers[j] = temp;
+
+            }
+        }
+
+        System.out.println("Insertion Sort: "+ Arrays.toString(numbers));
+
+
+    }
 
     public static void main(String[] args) {
 
-        int []array = {10,5,11,9,8,15};
+//        This Scanner objects get the user input
+        Scanner sc = new Scanner(System.in);
 
-        int length = array.length;
+//        User declare the number of elements to store in a single array formate
+        System.out.print("Declare the size of elements: ");
+        int size = sc.nextInt();
 
-        System.out.println("Before sorting array elements: ");
-        for (int i=0; i< length;i++){
-
-            System.out.printf("%d,",array[i]);
-
+//        Array object to store user input element
+        int[] arrayElement = new int[size];
+        for (int i = 0; i < size; i++){
+            System.out.printf("Enter %d index element: ", i);
+            arrayElement[i] = sc.nextInt();
         }
 
+//        Print array elements before sorting
+        System.out.println("Before sorting elements: "+ Arrays.toString(arrayElement
+        ));
 
-        bubbleSort(array);
+        System.out.println("After sorting array elements using three sorting methods:");
 
-        selectionSort(array);
+//        call Bobble sort function
+        bobbleSorting(arrayElement);
 
-        insertionSort(array);
+//        call Selection sort function
+        selectionSort(arrayElement);
+
+//        call Insertion sort function
+        insertionSort(arrayElement);
+
 
     }
 }
