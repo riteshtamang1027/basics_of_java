@@ -26,7 +26,7 @@ if(i == 0){
         System.out.println(res);
     }
 
-//    print the power of a number using recursion;
+//    print the power of a number using recursion for stack height h;
     public static int printPowerOfNumber(int a, int n){
 
         if(n == 0){
@@ -44,6 +44,29 @@ if(i == 0){
 
     }
 
+
+//    for stack height (loge)
+    static int calculatePower(int a, int n){
+
+        if(n ==0){
+            return 1;
+        } else if (a ==0) {
+            return 0;
+
+        }
+
+
+       else {
+            if(n % 2 ==0){
+                return calculatePower(a, n/2) * calculatePower(a,n/2);
+            }
+            else {
+                return  calculatePower(a, n/2) * calculatePower(a, n/2) * a;
+            }
+        }
+
+    }
+
     static void main(String[] args) {
 
         int a=0, b=1, n=10;
@@ -54,6 +77,9 @@ if(i == 0){
         System.out.println("Calculate the power of a number using recursion:");
         System.out.println(printPowerOfNumber(2,5));
         power(2,5);
+
+
+        System.out.println(calculatePower(4,4));
 
     }
 }
