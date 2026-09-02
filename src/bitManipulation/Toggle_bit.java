@@ -1,3 +1,5 @@
+package bitManipulation;
+
 public class Toggle_bit {
     public static void main(String[] args) {
         int number = 5;
