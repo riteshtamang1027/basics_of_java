@@ -17,7 +17,30 @@ public class SortingAlgorithm {
 
             }
         }
-        System.out.println("----- After sorting -----");
+        System.out.println("----- Sorted numbers using bubble sort algorithm -----");
+        System.out.println(Arrays.toString(numb));
+
+    }
+
+//    Using selection sort
+
+    public static void selectionSort(int []numb){
+
+        int leng = numb.length;
+
+        for (int i = 0; i < leng - 1; i ++){
+            int min = i;
+            for (int j = i; j < leng; j++){
+                if (numb[j] < numb[min]){
+                    min = j;
+                }
+            }
+
+            int temp = numb[i];
+            numb[i] = numb[min];
+            numb[min] = temp;
+        }
+        System.out.println("----- Sorted numbers using selection sort algorithm -----");
         System.out.println(Arrays.toString(numb));
 
     }
@@ -28,6 +51,7 @@ public class SortingAlgorithm {
         System.out.println("----- Before sorting -----");
         System.out.println(Arrays.toString(number));
         bubbleSort(number);
+        selectionSort(number);
 
 
     }
